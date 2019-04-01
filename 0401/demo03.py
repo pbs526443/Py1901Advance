@@ -10,6 +10,8 @@ class Good():
     '''
     这是一个商品类
     '''
+    addr = 'fujian'
+
     def __init__(self,_name):
         self.name = _name
 
@@ -24,9 +26,20 @@ class Good():
     def printclassinfo(cls):
         print("类方法")
 
+# 实例属性,实例可以调用类方法
 a1 = Good(10)
-print(a1.name)
+print(a1.name,a1.addr)
+
+# 类属性
+Good.addr = 'zhongguo'
+print(Good.addr)
+
+# 调用实例方法
 a2 = a1.getname()
 print(a2)
+
+# 调用静态方法
 a1.dead()
+
+# 调用类方法
 a1.printclassinfo()

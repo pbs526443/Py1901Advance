@@ -32,6 +32,7 @@ a2 = Good("fujian")
 a2.geti = types.MethodType(getinfo,a2)
 a2.geti()
 
+# 定义类方法
 @classmethod
 def getdoc(cls):
     print(cls.__doc__)
@@ -40,13 +41,15 @@ Good.getd = getdoc
 Good.getd()
 a2.getd
 
+# 定义静态方法
 @staticmethod
 def get():
     print("staric method")
-
+#动态的添加静态方法
 Good.get1 = get
 Good.get1()
 
+# 删除指定属性
 delattr(Good,"get1")
 if hasattr(Good,"get1"):
     print("存在get")
